@@ -3,6 +3,9 @@
 # @Author   : KyleWang
 # @File     : advance02.py
 
+import time
+import datetime
+
 # 字典
 dict = {'Alice': '2341', 'Beth': '9102', 'Cecil': '3258'}
 
@@ -21,8 +24,6 @@ dict.clear()
 del dict
 
 # 日期和时间
-import time, datetime
-
 localtime = time.localtime(time.time())
 print("local current time:", localtime)
 
@@ -34,7 +35,16 @@ expire_time = "2018-06-17 15:37:36"
 d = datetime.datetime.strptime(expire_time, '%Y-%m-%d %H:%M:%S')
 print(d)
 
+oneday = datetime.timedelta(days=1)
+today = datetime.date.today()
+yesterday = datetime.date.today() - oneday
+tomorrow = datetime.date.today() + oneday
+print(oneday, today, yesterday, tomorrow)
 
+time_sec_float = time.mktime(d.timetuple())
+print(time_sec_float)
 
+time_sec_float = time.mktime(today.timetuple())
+print(time_sec_float)
 
-
+print(time.time())
