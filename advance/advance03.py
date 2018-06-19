@@ -3,6 +3,7 @@
 # @Author   : KyleWang
 # @File     : advance03.py
 
+from functools import reduce
 
 lst = [1, 2, 1, 1, 2, 3, 4, 2, 1, 2, 5, 6, 1, 2]
 
@@ -29,3 +30,11 @@ def statistics2(lst):
 
 
 print(statistics2(lst))
+
+
+def statistics3(dic, k):
+    if not k in dic:
+        dic[k] = 1
+    else:
+        dic[k] += 1
+    return dic
